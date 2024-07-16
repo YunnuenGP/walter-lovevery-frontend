@@ -1,4 +1,4 @@
-export interface Image {
+export interface ImageMetadata {
   src: string;
   alt?: string;
   caption?: string;
@@ -8,19 +8,20 @@ export interface Button {
   text: string;
   href: string;
 }
+export type MediaBannerData = {
+  img?: ImageMetadata;
+  leadingText?: string;
+  heading?: string;
+  orientation?: "left" | "right";
+  button?: Button;
+};
 
 export interface MockData {
-  mediaBanner: {
-    img?: Image;
-    leadingText?: string;
-    heading?: string;
-    orientation?: "left" | "right";
-    button?: Button;
-  };
+  mediaBanner: MediaBannerData;
   itemRow: {
     heading?: string;
     items?: {
-      img?: Image;
+      img?: ImageMetadata;
       heading?: string;
       body?: string;
     }[];

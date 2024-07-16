@@ -2,11 +2,11 @@ export const Loading = () => {
   return (
     <div
       role="status"
-      className="flex h-full w-full items-center justify-center bg-neutral-200 opacity-70 dark:bg-neutral-600"
+      className="flex flex-1 items-center justify-center bg-neutral-200 opacity-70 dark:bg-neutral-600"
     >
       <svg
         aria-hidden="true"
-        className="h-8 w-8 animate-spin fill-sky-700 text-neutral-50 dark:fill-sky-300 dark:text-neutral-500"
+        className="h-10 w-10 animate-spin fill-sky-700 text-neutral-50 dark:fill-sky-300 dark:text-neutral-500"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

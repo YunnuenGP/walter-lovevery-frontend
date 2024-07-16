@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getMediaBannerData } from "../actions";
+import { getMediaBannerData } from "@/app/actions";
 import { MockData } from "./types";
 
 export function useData() {
