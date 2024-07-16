@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} flex min-h-dvh flex-col`}>
         <Providers>
-          <Navbar className="bg-neutral-50 px-20 dark:bg-neutral-900" />
+          <Navbar className="bg-neutral-50 px-5 dark:bg-neutral-900 tablet:px-20" />
           <main className="flex-1 dark:bg-neutral-800">{children}</main>
         </Providers>
       </body>
