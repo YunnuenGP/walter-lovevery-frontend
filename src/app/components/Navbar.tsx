@@ -1,4 +1,4 @@
-import ThemeSwitch from "./shared/ThemeSwitch";
+import { ThemeSwitch } from "./shared";
 
 export const Navbar = (props: React.HTMLAttributes<HTMLElement>) => {
   return (
