@@ -16,7 +16,10 @@ export default function Home() {
 
   return (
     <section className="flex flex-1 flex-col">
-      <MediaBanner mediaBannerData={data.mediaBanner} position="left" />
+      <MediaBanner
+        mediaBannerData={data.mediaBanner}
+        position={data.mediaBanner.orientation}
+      />
     </section>
   );
 }

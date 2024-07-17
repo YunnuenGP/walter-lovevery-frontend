@@ -4,13 +4,21 @@ import { MockData } from "./types";
 
 export function useData() {
   const [data, setData] = useState<MockData>();
+  const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timeoutId = setTimeout(async () => {
-      const mock_data = (await getMediaBannerData()) as MockData;
-      setData(mock_data);
-      setIsLoading(false);
+      try {
+        const mock_data = (await getMediaBannerData()) as MockData;
+        setData(mock_data);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        }
+      } finally {
+        setIsLoading(false);
+      }
     }, 2000);
 
     return () => {
@@ -20,7 +28,7 @@ export function useData() {
 
   return {
     data,
-    error: false,
+    error,
     isLoading,
   };
 }
