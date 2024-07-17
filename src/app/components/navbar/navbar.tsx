@@ -1,6 +1,6 @@
-import { ThemeSwitch } from "./shared";
+import { ThemeSwitch } from "@/app/components/shared";
 
-export const Navbar = (props: React.HTMLAttributes<HTMLElement>) => {
+export const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
     <nav {...props}>
       <div className="flex items-center justify-between py-4">
