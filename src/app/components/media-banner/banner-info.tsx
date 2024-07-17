@@ -18,6 +18,7 @@ export const BannerInfo: React.FC<{ banner: MediaBannerData }> = ({
       {banner.button ? (
         <div className="flex w-full justify-center px-5 tablet:justify-start tablet:px-[7.5vw]">
           <Link
+            role="button"
             href={banner.button.href}
             className="max-w-[328px] flex-1 rounded-md bg-sky-700 px-5 py-3 text-center font-medium capitalize text-white hover:bg-sky-800 focus:outline-none focus:ring-4 focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800 tablet:max-w-72 tablet:py-5"
           >
