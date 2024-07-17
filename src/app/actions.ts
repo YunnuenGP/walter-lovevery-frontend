@@ -1,34 +1,4 @@
-import { useEffect, useState } from "react";
-
-export interface Image {
-  src: string;
-  alt?: string;
-  caption?: string;
-}
-
-export interface Button {
-  text: string;
-  href: string;
-}
-
-export interface MockData {
-  mediaBanner: {
-    img?: Image;
-    leadingText?: string;
-    heading?: string;
-    orientation?: "left" | "right";
-    button?: Button;
-  };
-  itemRow: {
-    heading?: string;
-    items?: {
-      img?: Image;
-      heading?: string;
-      body?: string;
-    }[];
-    button?: Button;
-  };
-}
+"use server";
 
 const MOCK_DATA = {
   mediaBanner: {
@@ -97,20 +67,6 @@ const MOCK_DATA = {
   },
 };
 
-export function useData() {
-  const [data, setData] = useState<typeof MOCK_DATA>();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setData(MOCK_DATA);
-      setIsLoading(false);
-    }, 2000);
-  }, []);
-
-  return {
-    data,
-    error: false,
-    isLoading,
-  };
+export async function getMediaBannerData(): Promise<typeof MOCK_DATA> {
+  return MOCK_DATA;
 }
