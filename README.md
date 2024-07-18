@@ -1,3 +1,11 @@
+## Summary Video
+
+https://www.loom.com/share/8d1aa21cb2364401a1fc797526b06efe?sid=f407c739-ed0f-46f4-8006-5abb7c36d8cf
+
+---
+
+
+
 <img src="https://images.ctfassets.net/0sea1vycfyqy/62gNRE2YaYcGCcrMngW2s2/471a5490ff9363ad9c183b3af5439e78/logo-green.svg" width="300" />
 
 This repository contains the Lovevery Frontend take-home challenge. This activity is open-ended without a right or wrong answer; it's only meant to gauge your approach to frontend problem solving. Relax, take your time, and have fun.
@@ -51,5 +59,3 @@ Once you're done, please email us with an archive of your repository. Kindly wri
 ## Results
 
 The code has been splitted into branches that has been chained together with pull requests. Use these chained Pull Requests to travel across different stages of the application in a more readable way.
-
-Tomorrow I'll be adding a loom video per pull request to briefly explain my thought process in every stage/branch. Once I got these videos up, I'll update this message accordingly.
