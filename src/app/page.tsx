@@ -1,13 +1,17 @@
 "use client";
 import { MediaBanner } from "@/app/components/media-banner";
-import { useData } from "@/app/hooks/useData";
+import { useMediaBanner } from "@/app/hooks/useData";
 import { Loading } from "@/app/components/shared";
 
 export default function Home() {
-  const { data, isLoading } = useData();
+  const { data, error, isLoading } = useMediaBanner();
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
   }
 
   if (!data) {

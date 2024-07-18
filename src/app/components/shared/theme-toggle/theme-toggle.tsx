@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { IconBaseProps } from "react-icons";
 
-export const ThemeSwitch = (props: IconBaseProps) => {
+export const ThemeToggle = (props: IconBaseProps) => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -26,10 +26,22 @@ export const ThemeSwitch = (props: IconBaseProps) => {
     );
 
   if (resolvedTheme === "dark") {
-    return <FiSun onClick={() => setTheme("light")} {...props} />;
+    return (
+      <FiSun
+        aria-label="Toggle light mode"
+        onClick={() => setTheme("light")}
+        {...props}
+      />
+    );
   }
 
   if (resolvedTheme === "light") {
-    return <FiMoon onClick={() => setTheme("dark")} {...props} />;
+    return (
+      <FiMoon
+        aria-label="Toggle dark mode"
+        onClick={() => setTheme("dark")}
+        {...props}
+      />
+    );
   }
 };
