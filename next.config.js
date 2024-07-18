@@ -1,5 +1,5 @@
 module.exports = {
-  outputFileTracing: false,
+  //outputFileTracing: false,
   images: {
     remotePatterns: [
       {

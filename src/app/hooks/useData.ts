@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getMediaBannerData } from "@/app/actions";
 import { MockData } from "./types";
 
-export function useData() {
+export function useMediaBanner() {
   const [data, setData] = useState<MockData>();
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
@@ -10,8 +10,8 @@ export function useData() {
   useEffect(() => {
     const timeoutId = setTimeout(async () => {
       try {
-        const mock_data = (await getMediaBannerData()) as MockData;
-        setData(mock_data);
+        const mock_data = await getMediaBannerData();
+        setData(mock_data as MockData);
       } catch (err: unknown) {
         if (err instanceof Error) {
           setError(err.message);
