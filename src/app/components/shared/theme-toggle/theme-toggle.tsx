@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { IconBaseProps } from "react-icons";
 
-export const ThemeSwitch = (props: IconBaseProps) => {
+export const ThemeToggle = (props: IconBaseProps) => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 

@@ -1,4 +1,4 @@
-import { ThemeSwitch } from "@/app/components/shared";
+import { ThemeToggle } from "@/app/components/shared";
 
 export const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
@@ -12,7 +12,7 @@ export const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
         </p>
         <ul className="flex space-x-8 text-neutral-700 dark:text-neutral-200">
           <li role="switch">
-            <ThemeSwitch className="h-6 w-6" />
+            <ThemeToggle className="h-6 w-6" />
           </li>
         </ul>
       </div>
