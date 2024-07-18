@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { BannerInfo } from "./banner-info";
+import { BannerContent } from "./banner-content";
 import { BannerImage } from "./banner-image";
 import { MediaBanner } from "./media-banner";
 import { MediaBannerData } from "@/app/hooks/types";
@@ -21,42 +21,28 @@ const MOCK_DATA: MediaBannerData = {
 
 describe("BannerInfo", () => {
   it("renders leading heading element", () => {
-    render(<BannerInfo banner={MOCK_DATA} />);
+    render(
+      <BannerContent>
+        <h4>{MOCK_DATA.leadingText}</h4>
+      </BannerContent>,
+    );
 
+    const banner = screen.getByTestId("banner-content");
     const leadingHeading = screen.getByRole("heading", { level: 4 });
 
-    expect(leadingHeading).toHaveTextContent(MOCK_DATA.leadingText || "");
-    expect(leadingHeading).toHaveClass("capitalize");
-  });
-
-  it("renders main heading elements", () => {
-    render(<BannerInfo banner={MOCK_DATA} />);
-
-    const mainHeading = screen.getByRole("heading", { level: 2 });
-    const hiddenMainHeading = screen.getByRole("heading", {
-      level: 1,
-      hidden: true,
-    });
-
-    expect(mainHeading).toHaveTextContent(MOCK_DATA.heading || "");
-    expect(hiddenMainHeading).toHaveTextContent(MOCK_DATA.heading || "");
-    expect(mainHeading).not.toHaveClass("hidden");
-    expect(hiddenMainHeading).toHaveClass("hidden");
-  });
-
-  it("renders call to action element", () => {
-    render(<BannerInfo banner={MOCK_DATA} />);
-    const mock_text = MOCK_DATA.button?.text as string;
-    const button_CTA = screen.getByText(mock_text);
-
-    expect(button_CTA).toHaveAttribute("href", MOCK_DATA.button?.href);
-    expect(button_CTA).toHaveClass("capitalize");
+    expect(leadingHeading).toHaveTextContent(MOCK_DATA.leadingText as string);
+    expect(banner).toContainElement(leadingHeading);
   });
 });
 
 describe("BannerImage", () => {
   it("renders banner's image", () => {
-    render(<BannerImage imageInfo={MOCK_DATA.img} />);
+    render(
+      <BannerImage
+        src={MOCK_DATA.img?.src as string}
+        alt={MOCK_DATA.img?.alt as string}
+      />,
+    );
     const mock_alt_text = MOCK_DATA.img?.alt as string;
     const image = screen.getByRole("img");
 
@@ -64,8 +50,9 @@ describe("BannerImage", () => {
     expect(image).not.toHaveAccessibleDescription(mock_alt_text);
   });
 
+  // TODO: Renders on error
   it("renders fallback", () => {
-    render(<BannerImage />);
+    render(<BannerImage src="/resources/test.png" />);
 
     const image = screen.getByRole("img");
     const label = screen.getByRole("heading", { level: 2 });
@@ -78,13 +65,24 @@ describe("BannerImage", () => {
 
 describe("MediaBanner", () => {
   it("renders the media banner with BannerInfo and BannerImage", () => {
-    render(<MediaBanner mediaBannerData={MOCK_DATA} />);
+    render(
+      <MediaBanner>
+        <MediaBanner.Content>
+          <h4>{MOCK_DATA.leadingText}</h4>
+        </MediaBanner.Content>
+        <MediaBanner.Image
+          src={MOCK_DATA.img?.src as string}
+          alt={MOCK_DATA.img?.alt as string}
+        />
+      </MediaBanner>,
+    );
+    const banner = screen.getByRole("article");
     const image = screen.getByRole("img");
-    const button_CTA = screen.getByRole("button");
-    const hiddenHeading = screen.getByRole("heading", { level: 1 });
+    const leadingHeading = screen.getByRole("heading", { level: 4 });
 
     expect(image).toHaveClass("object-cover");
-    expect(button_CTA).toHaveAttribute("href", MOCK_DATA.button?.href);
-    expect(hiddenHeading).toHaveClass("hidden");
+    expect(leadingHeading).toHaveTextContent(MOCK_DATA.leadingText as string);
+    expect(banner).toContainElement(image);
+    expect(banner).toContainElement(leadingHeading);
   });
 });
