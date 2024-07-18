@@ -67,6 +67,8 @@ const MOCK_DATA = {
   },
 };
 
-export async function getMediaBannerData(): Promise<typeof MOCK_DATA> {
-  return MOCK_DATA;
+export async function getMediaBannerData(): Promise<
+  typeof MOCK_DATA.mediaBanner
+> {
+  return MOCK_DATA.mediaBanner;
 }
