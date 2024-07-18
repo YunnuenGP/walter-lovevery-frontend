@@ -9,8 +9,6 @@ This repository contains a Next.js application generated via `create-next-app`.
 ```bash
 $   npm install      # install dependencies
 $   npm run dev      # run locally
-$   npm run test      # run test locally
-$   npm run storybook     # run storybook locally
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -47,9 +45,3 @@ This activity is intentionally open-ended and aims to gauge your general approac
 ## Submission
 
 Once you're done, please email us with an archive of your repository. Kindly write a README detailing a description of your solution. This will help us understand your technical approach, design decisions and your ability to effectively communicate and document your work.
-
-## Results
-
-The code has been splitted into branches that has been chained together with pull requests. Use these chained Pull Requests to travel across different stages of the application in a more readable way.
-
-Tomorrow I'll be adding a loom video per pull request to briefly explain my thought process in every stage/branch. Once I got these videos up, I'll update this message accordingly.
