@@ -19,13 +19,15 @@ export const BannerImage: React.FC<BannerImageProps> = ({
         sizes="100%"
         aria-label={caption}
         priority
-        onError={() => <FallbackImage />}
         {...props}
       />
     </section>
   );
 };
 
+/*
+  TODO: Adding FallbackImage as Error Boundary
+*/
 const FallbackImage: React.FC = () => {
   return (
     <div
