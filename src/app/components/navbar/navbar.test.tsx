@@ -6,7 +6,7 @@ describe("Navbar", () => {
     render(<Navbar />);
 
     const nav = screen.getByRole("navigation");
-    const toggle = screen.getByRole("switch");
+    const toggle = screen.getByRole("menuitem");
     const logo = screen.getByText("every");
 
     expect(nav).toBeInTheDocument();

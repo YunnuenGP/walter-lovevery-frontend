@@ -11,7 +11,7 @@ export const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <span className="text-greenvery">Walt</span>every
         </p>
         <ul className="flex space-x-8 text-neutral-700 dark:text-neutral-200">
-          <li role="switch">
+          <li role="menuitem">
             <ThemeToggle className="h-6 w-6" />
           </li>
         </ul>
