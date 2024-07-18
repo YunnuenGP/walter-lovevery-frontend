@@ -44,7 +44,11 @@ export default function Home() {
             </div>
           ) : null}
         </MediaBanner.Content>
-        <MediaBanner.Image src={banner.img?.src || ""} />
+        <MediaBanner.Image
+          src={banner.img?.src || ""}
+          alt={banner.img?.alt || ""}
+          caption={banner.img?.caption || ""}
+        />
       </MediaBanner>
     </section>
   );
