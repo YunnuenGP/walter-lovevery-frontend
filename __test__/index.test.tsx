@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../src/app/page";
+import Home from "@/app/page";
 
 describe("Smoke Test - Home Component", () => {
   it("renders the initial loading spinner", () => {

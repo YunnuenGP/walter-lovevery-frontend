@@ -8,11 +8,12 @@ export const BannerImage: React.FC<{ imageInfo?: ImageMetadata }> = ({
   if (!imageInfo) {
     return (
       <div
+        aria-label="Image not found"
         role="img"
         className="flex h-full flex-[1.7] flex-col items-center justify-center capitalize tablet:flex-1"
       >
         <FiImage className="h-20 w-20" />
-        <p>no image</p>
+        <h2>Image not found</h2>
       </div>
     );
   }

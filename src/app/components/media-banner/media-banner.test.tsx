@@ -68,9 +68,10 @@ describe("BannerImage", () => {
     render(<BannerImage />);
 
     const image = screen.getByRole("img");
-    const label = screen.getByText("no image");
+    const label = screen.getByRole("heading", { level: 2 });
 
     expect(label).toBeInTheDocument();
+    expect(label).toHaveTextContent("Image not found");
     expect(image).toContainElement(label);
   });
 });
